@@ -27,6 +27,7 @@ describe("API request", () => {
             .its("status")
             .should("eq", 200);
     });
+
     it("PATCH request ", () => {
             cy.request("PATCH", baseUrl + userId, {"title": "Hillel"}).then((response) => {
               expect(response.status).eq(200)
