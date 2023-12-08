@@ -45,3 +45,8 @@ cypress/videos/
 
 cypress/screenshots/
 cypress.env.json
+
+#reports
+mochawesome-report
+cypress/results
+cypress/merged-report
