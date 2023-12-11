@@ -2,7 +2,7 @@
 
 const url = 'http://localhost:4200/pages/forms/datepicker'
 export class DatePickerPage {
-  DatePickerPageOpen () {
+  openDatePickerPage () {
     cy.visit (url)
   }
     get formPicker (){
