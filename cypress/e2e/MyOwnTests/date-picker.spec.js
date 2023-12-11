@@ -4,7 +4,7 @@ import moment from "moment"
 describe('Date picker tests with PageObject', ()=> {
     const datePickerPage = new DatePickerPage()
     const today = moment().format('ll')
-    it('Date picker today day check and compare value between input and present time', ()=>{
+    it('check that present date is displayed correctly in the input', ()=>{
         datePickerPage.DatePickerPageOpen ()
         datePickerPage.formPicker.click()
         datePickerPage.todayDayButton.click()
