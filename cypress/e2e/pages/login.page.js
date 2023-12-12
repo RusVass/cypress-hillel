@@ -1,5 +1,10 @@
 /// <reference types = "cypress" />
+
+const baseUrl = 'http://localhost:4200/auth/login'
 export class LoginPage {
+  openLoginPage () {
+    cy.visit (baseUrl)}
+
     get backButton (){
         return cy.get('a[aria-label="Back"]');
     }
@@ -42,6 +47,5 @@ export class LoginPage {
     get passwordError () {
         return cy.get ('p.caption.status-danger').eq(1)
     }
-    loginPageOpen () {
-        cy.visit ('http://localhost:4200/auth/login')}
+
 }

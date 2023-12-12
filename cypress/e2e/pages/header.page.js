@@ -1,5 +1,5 @@
 /// <reference types = "cypress" />
 export class HeaderPage {
-    get userAvatar(){
+    get iconUI(){
         return cy.get('div.user-picture.image')}
 }

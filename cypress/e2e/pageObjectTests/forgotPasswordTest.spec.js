@@ -1,8 +1,8 @@
 /// <reference types = "cypress" />
 
-import {ForgotPassword} from '../pages/Forgot-password.page'
-import {RegisterPage} from '../pages/Register.page'
-import {LoginPage} from '../pages/Login.page'
+import {ForgotPassword} from '../pages/forgotPassword.page'
+import {RegisterPage} from '../pages/register.page'
+import {LoginPage} from '../pages/login.page'
 
 describe('Forgot password page', ()=> {
     const forgotPassword = new ForgotPassword()
@@ -14,7 +14,7 @@ describe('Forgot password page', ()=> {
   })
 
     it('Negative test', ()=>{
-        forgotPassword.emailInput.type('incorrect email')
+        forgotPassword.emailInput.type('asd')
         forgotPassword.title.click()
         forgotPassword.emailError.should("contain", "Email should be the real one!")
     })

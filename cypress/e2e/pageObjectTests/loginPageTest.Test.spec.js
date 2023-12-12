@@ -1,13 +1,16 @@
 /// <reference types = "cypress" />
-import {LoginPage} from '../pages/Login.page'
-import {HeaderPage} from '../pages/Header.page'
+import {LoginPage} from '../pages/login.page'
+import {HeaderPage} from '../pages/header.page'
 describe('Login test with PageObject', ()=> {
     const loginPage = new LoginPage()
     const headerPage = new HeaderPage()
 
-    it('Negative login', ()=>{
-        loginPage.loginPageOpen()
-        loginPage.emailInput.click().type('invalid email')
+    beforeEach(() => {
+      loginPage.openLoginPage ()
+    })
+
+    it('Negative test', ()=>{
+        loginPage.emailInput.click().type('asd')
         loginPage.passwordInput.click().type ('123')
         loginPage.emailError.should("contain", "Email should be the real one!")
         loginPage.customCheckbox.click()
@@ -15,13 +18,12 @@ describe('Login test with PageObject', ()=> {
         loginPage.loginButton.should('be.disabled')
 
     })
-    it('Possitive login and login check', ()=>{
-        loginPage.loginPageOpen()
+    it('Positive test', ()=>{
         loginPage.emailInput.click().type('test@i.ua')
-        loginPage.passwordInput.click().type ('testpass')
+        loginPage.passwordInput.click().type ('pass')
         loginPage.customCheckbox.click()
         loginPage.loginButton.click()
-        headerPage.userAvatar.should("be.visible")
+        headerPage.iconUI.should("be.visible")
 
     })
 })
