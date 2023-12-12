@@ -1,17 +1,15 @@
 /// <reference types = "cypress" />
 const baseUrl = 'http://localhost:4200/auth/request-password'
 export class ForgotPassword {
-  openForgotPasswordPage () {
-    cy.visit(baseUrl)
-  }
+    openForgotPasswordPage () {
+          cy.visit(baseUrl)
+    }
     get title () {
         return cy.get ('#title')
     }
-
     get emailInput() {
         return cy.get ('#input-email')
     }
-
     get backToLoginButton () {
         return cy.get ('a[routerlink="../login"]')
     }

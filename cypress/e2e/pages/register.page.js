@@ -2,8 +2,9 @@
 
 const baseUrl = 'http://localhost:4200/auth/register'
 export class RegisterPage {
-  openRegisterPage()  {
-    cy.visit(baseUrl)}
+    openRegisterPage()  {
+      cy.visit(baseUrl)
+    }
     get backButton (){
         return cy.get('a[aria-label="Back"]');
     }

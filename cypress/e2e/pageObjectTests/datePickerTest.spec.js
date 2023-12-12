@@ -1,6 +1,8 @@
 /// <reference types = "cypress" />
+
 import {DatePickerPage} from '../pages/datePicker.page'
 import moment from "moment"
+
 describe('Date picker tests with PageObject', ()=> {
     const datePickerPage = new DatePickerPage()
     const today = moment().format('ll')

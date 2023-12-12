@@ -2,9 +2,9 @@
 
 const baseUrl = 'http://localhost:4200/auth/login'
 export class LoginPage {
-  openLoginPage () {
-    cy.visit (baseUrl)}
-
+    openLoginPage () {
+        cy.visit (baseUrl)
+    }
     get backButton (){
         return cy.get('a[aria-label="Back"]');
     }
@@ -47,5 +47,4 @@ export class LoginPage {
     get passwordError () {
         return cy.get ('p.caption.status-danger').eq(1)
     }
-
 }
