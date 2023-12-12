@@ -22,7 +22,6 @@ describe('Register test with PageObject', ()=> {
     })
 
     it('Positive test', ()=>{
-
         registerPage.fullName.click ().type('Admin')
         registerPage.emailInput.click ().type ('it@gmail.com')
         registerPage.passwordInput.click().type ('qwerty123')

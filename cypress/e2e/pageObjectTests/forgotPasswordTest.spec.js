@@ -10,7 +10,7 @@ describe('Forgot password page', ()=> {
     const loginPage = new LoginPage()
 
   beforeEach(() => {
-    forgotPassword.OpenforgotPasswordPage()
+    forgotPassword.openForgotPasswordPage()
   })
 
     it('Negative test', ()=>{
