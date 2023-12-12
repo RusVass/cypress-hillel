@@ -1,4 +1,5 @@
 /// <reference types = "cypress" />
+
 import {RegisterPage} from '../pages/register.page'
 import {HeaderPage} from '../pages/header.page'
 

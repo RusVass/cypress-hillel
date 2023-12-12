@@ -1,4 +1,5 @@
 /// <reference types = "cypress" />
+
 const baseUrl = 'http://localhost:4200/auth/register'
 export class RegisterPage {
     openRegisterPage()  {

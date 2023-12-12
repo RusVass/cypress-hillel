@@ -1,4 +1,5 @@
 /// <reference types = "cypress" />
+
 import {LoginPage} from '../pages/login.page'
 import {HeaderPage} from '../pages/header.page'
 describe('Login test with PageObject', ()=> {
