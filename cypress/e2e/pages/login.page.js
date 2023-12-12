@@ -1,5 +1,4 @@
 /// <reference types = "cypress" />
-
 const baseUrl = 'http://localhost:4200/auth/login'
 export class LoginPage {
     openLoginPage () {

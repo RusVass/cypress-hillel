@@ -1,5 +1,6 @@
 /// <reference types = "cypress" />
 const baseUrl = 'http://localhost:4200/auth/request-password'
+
 export class ForgotPassword {
     openForgotPasswordPage () {
           cy.visit(baseUrl)
@@ -20,4 +21,4 @@ export class ForgotPassword {
         return cy.get ('p.caption.status-danger')
     }
 
-    }
+}

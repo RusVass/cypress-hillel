@@ -1,5 +1,4 @@
 /// <reference types = "cypress" />
-
 import {DatePickerPage} from '../pages/datePicker.page'
 import moment from "moment"
 

@@ -2,6 +2,7 @@
 import {RegisterPage} from '../pages/register.page'
 import {HeaderPage} from '../pages/header.page'
 
+
 describe('Register test with PageObject', ()=> {
     const registerPage = new RegisterPage ()
     const headerPage = new HeaderPage()

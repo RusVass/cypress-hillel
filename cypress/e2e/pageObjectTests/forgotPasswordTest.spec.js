@@ -1,5 +1,4 @@
 /// <reference types = "cypress" />
-
 import {ForgotPassword} from '../pages/forgotPassword.page'
 import {RegisterPage} from '../pages/register.page'
 import {LoginPage} from '../pages/login.page'
