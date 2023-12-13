@@ -15,13 +15,22 @@ describe('Form layouts', ()=> {
     cy.get('input#editProfilePhoto').selectFile('cypress/fixtures/logo.jpg')
     cy.intercept('PUT','api/users/profile').as('logo')
      cy.contains('button','Save').click()
-    // cy.get("@logo").then(response => {
-    //   // console.log(res)
-    // expect(response.statusCod).eq(200);
-    // })
+    cy.get("@logo").its('response').then(res => {
+      console.log(res)
+    expect(res.statusCode).eq(200);
+    })
+cy.pu
 
     })
   })
+
+// it("PUT request test ", () => {
+//   cy.request("PUT", baseUrl + userId, {
+//     fixture: "user",
+//   })
+//     .its("status")
+//     .should("eq", 200);
+// });
 
 
 // describe('CSS intro', ()=>{
