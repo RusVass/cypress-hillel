@@ -2,7 +2,12 @@
 
 describe('CSS intro', ()=>{
 
-  it('test db', () => {
+  it('it test file upload',() =>{
+    cy.visit('https://guest:welcom2qauto@qauto.forstudy.space')
+
+  })
+
+  it.skip('test db', () => {
     cy.task(
       "queryDb",
       `SELECT * FROM shop.agents`
@@ -16,7 +21,7 @@ describe('CSS intro', ()=>{
     // cy.task('log', count)
   })
 
-  it('Create user', () => {
+  it.skip('Create user', () => {
     cy.task('queryDb',
       "INSERT INTO shop.customer VALUES ('C00113', 'Holmes', 'London', 'London', 'UK', '2', '6000.00', '5000.00', '7000.00', '4000.00', 'BBBBBBB', 'A003');    "
     ).then(res => {
