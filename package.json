@@ -74,6 +74,7 @@
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
     "moment": "^2.29.4",
+    "mysql": "github:mysqljs/mysql",
     "nebular-icons": "1.1.0",
     "ng2-ckeditor": "^1.2.2",
     "ng2-completer": "2.0.8",

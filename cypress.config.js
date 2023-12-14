@@ -1,5 +1,28 @@
 // import { defineConfig } from "cypress";
 const { defineConfig } = require("cypress");
+
+import * as mysql from "mysql";
+
+// const mysql = require("mysql");
+
+function queryTestDb(query, config) {
+  // creates a new mysql connection using credentials from cypress.json env's
+  const connection = mysql.createConnection(config.env.db);
+  // start connection to db
+  connection.connect();
+  // exec query + disconnect to db as a Promise
+  return new Promise((resolve, reject) => {
+    connection.query(query, (error, results) => {
+      if (error) reject(error);
+      else {
+        connection.end();
+        // console.log(results)
+        return resolve(results);
+      }
+    });
+  });
+}
+
 export default defineConfig({
   reporter: "mochawesome",
   reporterOptions: {
