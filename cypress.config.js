@@ -1,46 +1,45 @@
-// import { defineConfig } from "cypress";
-const { defineConfig } = require("cypress");
-
-import * as mysql from "mysql";
-
+// import * as mysql from "mysql";
 // const mysql = require("mysql");
 
-function queryTestDb(query, config) {
-  // creates a new mysql connection using credentials from cypress.json env's
-  const connection = mysql.createConnection(config.env.db);
-  // start connection to db
-  connection.connect();
-  // exec query + disconnect to db as a Promise
-  return new Promise((resolve, reject) => {
-    connection.query(query, (error, results) => {
-      if (error) reject(error);
-      else {
-        connection.end();
-        // console.log(results)
-        return resolve(results);
-      }
-    });
-  });
-}
+const { defineConfig } = require("cypress");
+// import {defineConfig} from "cypress";
+// import * as mysql from "mysql";
+// const mysql = require("mysql");
 
-export default defineConfig({
-  reporter: "mochawesome",
-  reporterOptions: {
-    reportDir: "cypress/results",
-    overwrite: false,
-    html: false,
-    json: true,
-  },
+module.exports = defineConfig({
+  // функція для роботи з "mysql"
+  // function queryTestDb(query, config) {
+  //   // creates a new mysql connection using credentials from cypress.json env's
+  //   const connection = mysql.createConnection(config.env.db);
+  //   // start connection to db
+  //   connection.connect();
+  //   // exec query + disconnect to db as a Promise
+  //   return new Promise((resolve, reject) => {
+  //     connection.query(query, (error, results) => {
+  //       if (error) reject(error);
+  //       else {
+  //         connection.end();
+  //         // console.log(results)
+  //         return resolve(results);
+  //       }
+  //     });
+  //   });
+  // }
+
   e2e: {
     setupNodeEvents(on, config) {
+      // Usage: cy.task('queryDb', query)
       on("task", {
+        queryDb: (query) => {
+          return queryTestDb(query, config);
+        },
         log(message) {
           console.log(message);
           return null;
         },
       });
     },
-    baseUrl: "http://localhost:4200",
+    baseUrl: "https://qauto.forstudy.space",
     specPattern: "cypress/e2e/**/*.spec.{js,jsx,ts,tsx}",
   },
   screenshotOnRunFailure: true, // default true
@@ -53,9 +52,9 @@ export default defineConfig({
   responseTimeout: 30000, // default 30000
 
   // watchForFileChanges: false,
-  env: {
-    POST: "4200",
-    WORK_ENV: "dev",
-    password: "qwerty",
-  },
+  // env: {
+  //   POST: "4200",
+  //   WORK_ENV: "dev",
+  //   password: "qwerty",
+  // },
 });
