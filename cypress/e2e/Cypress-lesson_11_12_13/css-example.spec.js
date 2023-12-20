@@ -1,16 +1,14 @@
-
-
 /// <reference types="cypress" />
 
 cy.findByText = function (button) {
 
 };
-describe('CSS intro', ()=>{
-  beforeEach(()=>{
+describe('CSS intro', () => {
+  beforeEach(() => {
     cy.visit('/pages/forms/layouts')
   })
 
-  it('selectors example', ()=>{
+  it('selectors example', () => {
     cy.get('button')                  // за тегом
     cy.get('div.form-group.row')          // за класом
     cy.get('body div input ')          // усі input в div та body
@@ -32,19 +30,18 @@ describe('CSS intro', ()=>{
   })
 
 
-
-
   it('cypress helpers', () => {
     cy.get('button').eq(0) //знаходимо тег button за індексом  eq(10) це десята кнопка
     cy.get('button').first() // перший button
     cy.get('button').last()// останній button
     cy.get('form').find('.status-danger')// метод .find додатковий пошук
-    cy.contains('button[status="danger"]','Submit')//contains повертає лише перше/одне значення, що знайде у
+    cy.contains('button[status="danger"]', 'Submit')//contains повертає лише перше/одне значення, що знайде у
     // тега button  зі статусом текста  [status="danger"] + додаткова опція  будь-який текст наприклад  Submit
-    cy.contains('button','Submit')// находимо тег button  який содержит текст  Submit
+    cy.contains('button', 'Submit')// находимо тег button  який содержит текст  Submit
     cy.get('button', {log: true})// логування включене
     // cy.get('button', {log: false})// логування виключене
     // cy.get('button', {timeout: 8000})// задаємо додатковий timeout
+
     // within - вказує на місце/елемент з якого місця потрібно робити пошук
     cy.contains('nb-card-body form', 'Sign in').last().within(() => {
       cy.get('input').eq(0).type('hi')
