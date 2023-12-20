@@ -1,5 +1,5 @@
-import { defineConfig } from "cypress";
-
+//import { defineConfig } from "cypress";
+const { defineConfig } = require("cypress");
 export default defineConfig({
   reporter: "mochawesome",
   reporterOptions: {
