@@ -37,43 +37,43 @@
 // }
 
 // ====== add ====  clickMenuByName
-Cypress.Commands.add('clickMenuByName', (name) => {
-  cy.get('nb-sidebar nb-menu').contains(name).click()
-})
+Cypress.Commands.add("clickMenuByName", (name) => {
+  cy.get("nb-sidebar nb-menu").contains(name).click();
+});
 
-// forceClick
-Cypress.Commands.add('forceClick', {prevSubject: 'element'}, (subject) => {
-  cy.wrap(subject).click({force: true})
-})
+// forceClick приклад дочірнього елемента
+Cypress.Commands.add("forceClick", { prevSubject: "element" }, (subject) => {
+  cy.wrap(subject).click({ force: true });
+});
 
 // ===== add ====== login
-Cypress.Commands.add('login', (email, password) => {
-  cy.get('#input-email').type(email)
-  cy.get('#input-password').type(password)
-  cy.get('form button[status="primary"]').click()
-})
+Cypress.Commands.add("login", (email, password) => {
+  cy.get("#input-email").type(email);
+  cy.get("#input-password").type(password);
+  cy.get('form button[status="primary"]').click();
+});
 
 // ==== overwrite ====  type
-Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+Cypress.Commands.overwrite("type", (originalFn, element, text, options) => {
   if (options && options.sensitive) {
     // turn off original log
-    options.log = false
+    options.log = false;
     // create our own log with masked message
     Cypress.log({
       $el: element,
-      name: 'type',
-      message: '*'.repeat(text.length),
-    })
+      name: "type",
+      message: "*".repeat(text.length),
+    });
   }
 
-  return originalFn(element, text, options)
-})
+  return originalFn(element, text, options);
+});
 
-Cypress.Commands.add('loginViaAPI', (email, password) => {
-  cy.request('POST', 'https://qauto.forstudy.space/api/auth/signin', {
-    "email": email,
-    "password": password,
-    "remember": false
-  })
-  cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/')
-})
+Cypress.Commands.add("loginViaAPI", (email, password) => {
+  cy.request("POST", "https://qauto.forstudy.space/api/auth/signin", {
+    email: email,
+    password: password,
+    remember: false,
+  });
+  cy.visit("https://guest:welcome2qauto@qauto.forstudy.space/");
+});
