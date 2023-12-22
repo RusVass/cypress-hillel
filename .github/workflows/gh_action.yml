@@ -1,15 +1,6 @@
 name: Cypress run
 on:
-  # schedule:
-  #   - cron: '0 8 * * 2'
   workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/workflows/*"
-  pull_request:
-    types: [ opened, edited, reopened ]
 
 jobs:
   cypress:
@@ -21,9 +12,6 @@ jobs:
         run: npm i --force
       - name: Run server and test
         run: npm run cy:run:server
-        env:
-          WORK_ENV: prod
-          USER: ${{secrets.USER}}
       - name: Create report
         if: success() || failure()
         run: npm run report:all
@@ -33,9 +21,4 @@ jobs:
         with:
           name: test-report
           path: mochawesome-report/
-  reports:
-    needs: cypress
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get project code
-        run: echo "test"
+ 
