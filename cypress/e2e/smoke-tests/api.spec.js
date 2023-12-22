@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 const baseUrl = "https://jsonplaceholder.typicode.com/posts/";
 const userId = 1;
 
