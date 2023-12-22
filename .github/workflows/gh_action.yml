@@ -1,7 +1,11 @@
 name: Cypress run
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, edited, reopened ]
 jobs:
   cypress:
     runs-on: ubuntu-latest
