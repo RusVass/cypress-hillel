@@ -1,28 +1,35 @@
 name: Cypress run
-on:
-  workflow_dispatch:
-  push:
+on: # як запускаємо
+  # schedule:
+  #  - cron: '0 8 * * 2' # графік запуску тестів
+  workflow_dispatch: # вручну
+  push: # тригер при push
     branches:
-      - master
-  pull_request:
-    types: [ opened, edited, reopened ]
+      - master # слікує за master
+    paths-ignore:
+      - ".github/workflows/*" # те що ігноримо
+  pull_request: # тригер при  pull_request
+    types: [ opened, edited, reopened ] # правила при яких наші тести запускаються
 
 jobs:
   cypress:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # це вказує  на чому ми запускємо
     steps:
       - name: Get project code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # команда витягує наш код з нашого репозиторія
       - name: Install dependencies
-        run: npm i --force
+        run: npm i --force # команда встановити всі залежності
       - name: Run server and test
-        run: npm run cy:run:server
+        run: npm run cy:run:server # команда запускає сервер і наші тести
+        env: # передача змінних з файл .env
+          WORK_ENV: prod
+          USER: ${{secrets.USER}} # наш secrets в github в setting + Secrets and Variables
       - name: Create report
-        if: success() || failure()
-        run: npm run report:all
+        if: success() || failure() # запустить при success та failure
+        run: npm run report:all  # команда створення репорту
       - name: Upload report
-        if: always()
-        uses: actions/upload-artifact@v3
+        if: always() # запустить тест у будь якому разі
+        uses: actions/upload-artifact@v3 # команда завантаження репорту github команда
         with:
           name: test-report
           path: mochawesome-report/
