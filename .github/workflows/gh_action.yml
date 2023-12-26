@@ -1,7 +1,8 @@
 name: Cypress run
 on:
   workflow_dispatch:
-
+env:
+  CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
 jobs:
   cypress:
     runs-on: ubuntu-latest
