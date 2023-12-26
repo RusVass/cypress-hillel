@@ -40,7 +40,7 @@
     "cy:run:report": "npm run report:delete && npm run cy:run:record",
     "report:all": "npm run report:merge && npm run report:html",
     "cy:run:server": "start-test start http-get://localhost:4200/ cy:run:report",
-    "cy:run:record": "npx cypress run --record --parallel"
+    "cy:run:record": "npx cypress run --record"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
