@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 env:
   CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+
 jobs:
   cypress_run1:
     runs-on: ubuntu-latest
