@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-26T15:20:44.150Z",
+    "end": "2023-12-26T15:20:45.753Z",
+    "duration": 1603,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "babce00a-1c8a-4e37-8c6a-235d6f04be28",
+      "title": "",
+      "fullFile": "cypress/e2e/hw-7-CypressFirstUITest/modalOverlaysPopover/popoverPosition.spec.js",
+      "file": "cypress/e2e/hw-7-CypressFirstUITest/modalOverlaysPopover/popoverPosition.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be1bdc99-08ff-4ee3-891b-69b9a8283671",
+          "title": "Popover tub",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check popover",
+              "fullTitle": "Popover tub Check popover",
+              "timedOut": null,
+              "duration": 1561,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/pages/modal-overlays/popover\");\ncy.contains(\"Right\").trigger(\"mouseenter\");\ncy.get(\".primitive-overlay\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "c88b5a89-044e-486d-8d34-2e37d7fbb01c",
+              "parentUUID": "be1bdc99-08ff-4ee3-891b-69b9a8283671",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c88b5a89-044e-486d-8d34-2e37d7fbb01c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1561,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

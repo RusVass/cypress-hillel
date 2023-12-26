@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-26T15:21:55.945Z",
+    "end": "2023-12-26T15:21:56.295Z",
+    "duration": 350,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e687dbdc-2f5f-47d4-bb10-ac4eaffabd21",
+      "title": "",
+      "fullFile": "cypress/e2e/smoke-tests/test1.spec.js",
+      "file": "cypress/e2e/smoke-tests/test1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "989dd647-1e04-457a-8baf-aeac883b78a5",
+          "title": "test1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET request ",
+              "fullTitle": "test1 GET request ",
+              "timedOut": null,
+              "duration": 111,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", baseUrl).then(response => {\n  expect(response.status).eq(200);\n  expect(response.body).lengthOf(100);\n});",
+              "err": {},
+              "uuid": "f4837fa6-eb8e-46cd-bef4-57bdff6c08e0",
+              "parentUUID": "989dd647-1e04-457a-8baf-aeac883b78a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST request ",
+              "fullTitle": "test1 POST request ",
+              "timedOut": null,
+              "duration": 182,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", baseUrl, {\n  fixture: \"user\"\n}).then(response => {\n  expect(response.status).eq(201);\n  expect(response.statusText).eq(\"Created\");\n});",
+              "err": {},
+              "uuid": "7ba5686d-3469-43b8-996f-99b701c5e972",
+              "parentUUID": "989dd647-1e04-457a-8baf-aeac883b78a5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4837fa6-eb8e-46cd-bef4-57bdff6c08e0",
+            "7ba5686d-3469-43b8-996f-99b701c5e972"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 293,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

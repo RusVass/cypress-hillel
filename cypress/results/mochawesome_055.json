@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-26T17:08:10.704Z",
+    "end": "2023-12-26T17:08:17.772Z",
+    "duration": 7068,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f191000b-883d-4161-b5c0-d4ab20556b8b",
+      "title": "",
+      "fullFile": "cypress/e2e/pageObjectTests/registerPageTest.spec.js",
+      "file": "cypress/e2e/pageObjectTests/registerPageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83cc8a67-43f6-4e1b-bc87-82d50ff2930d",
+          "title": "Register test with PageObject",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Negative test",
+              "fullTitle": "Register test with PageObject Negative test",
+              "timedOut": null,
+              "duration": 1721,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.fullName.type('tes');\nregisterPage.emailInput.click().type('asd');\nregisterPage.passwordInput.click().type('123');\nregisterPage.repeatPasswordInput.click();\nregisterPage.customCheckbox.click();\nregisterPage.fullNameError.should(\"contain\", \"Full name should contains from 4 to 50 characters\");\nregisterPage.emailError.should(\"contain\", \"Email should be the real one!\");\nregisterPage.passwordError.should(\"contain\", \"Password should contain from 4 to 50 characters\");\nregisterPage.repeatPasswordError.should(\"contain\", \"Password confirmation is required!\");",
+              "err": {},
+              "uuid": "52fe5ef5-4986-4425-8f26-48552cb63110",
+              "parentUUID": "83cc8a67-43f6-4e1b-bc87-82d50ff2930d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Positive test",
+              "fullTitle": "Register test with PageObject Positive test",
+              "timedOut": null,
+              "duration": 5265,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.fullName.click().type('Admin');\nregisterPage.emailInput.click().type('it@gmail.com');\nregisterPage.passwordInput.click().type('qwerty123');\nregisterPage.repeatPasswordInput.click().type('qwerty123');\nregisterPage.customCheckbox.click();\nregisterPage.registerButton.click();\nheaderPage.iconUI.should(\"be.visible\");",
+              "err": {},
+              "uuid": "5d77b503-55db-4aaa-9de1-2a87851046f0",
+              "parentUUID": "83cc8a67-43f6-4e1b-bc87-82d50ff2930d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "52fe5ef5-4986-4425-8f26-48552cb63110",
+            "5d77b503-55db-4aaa-9de1-2a87851046f0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6986,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
