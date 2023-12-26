@@ -45,3 +45,5 @@ cypress/videos/
 
 cypress/screenshots/
 cypress.env.json
+.DS_store
+cypress/snapshots/*/__diff_output__/*
