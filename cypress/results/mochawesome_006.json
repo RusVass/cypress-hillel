@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-26T19:57:23.424Z",
+    "end": "2023-12-26T19:57:24.916Z",
+    "duration": 1492,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c21f49e6-5a94-4089-ac56-fe32f8245f8c",
+      "title": "",
+      "fullFile": "cypress/e2e/pageObjectTests/datePickerTest.spec.js",
+      "file": "cypress/e2e/pageObjectTests/datePickerTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6f37b3fa-2004-4ca5-94b0-102ec3aab531",
+          "title": "Date picker tests with PageObject",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check that present date is displayed correctly in the input",
+              "fullTitle": "Date picker tests with PageObject Check that present date is displayed correctly in the input",
+              "timedOut": null,
+              "duration": 1446,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "datePickerPage.openDatePickerPage();\ndatePickerPage.formPicker.click();\ndatePickerPage.todayDayButton.click();\ndatePickerPage.formPicker.should('have.value', today);",
+              "err": {},
+              "uuid": "979cd151-7203-4f44-ae2f-c844f111066b",
+              "parentUUID": "6f37b3fa-2004-4ca5-94b0-102ec3aab531",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "979cd151-7203-4f44-ae2f-c844f111066b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1446,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
