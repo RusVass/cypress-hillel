@@ -1,0 +1,42 @@
+name: Cypress run
+on:
+  workflow_dispatch:
+env:
+  CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+jobs:
+  cypress_run1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm i --force
+      - name: Run server and test
+        run: npm run cy:run:server
+      - name: Create report
+        if: success() || failure()
+        run: npm run report:all
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: mochawesome-report/
+  cypress_run2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm i --force
+      - name: Run server and test
+        run: npm run cy:run:server
+      - name: Create report
+        if: success() || failure()
+        run: npm run report:all
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: mochawesome-report/
