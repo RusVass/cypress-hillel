@@ -1,5 +1,5 @@
 //import {defineConfig} from "cypress";
-const { defineConfig } = require("cypress");
+const {defineConfig} = require("cypress");
 
 module.exports = defineConfig({
   reporter: "mochawesome",
@@ -28,7 +28,6 @@ module.exports = defineConfig({
 
   env: {
     POST: "4200",
-    WORK_ENV: "dev",
-    password: "qwerty",
+    WORK_ENV: "staging",
   },
 });

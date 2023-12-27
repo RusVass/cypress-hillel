@@ -47,10 +47,12 @@ Cypress.Commands.add("forceClick", { prevSubject: "element" }, (subject) => {
 });
 
 // ===== add ====== login
-Cypress.Commands.add("login", (email, password) => {
-  cy.get("#input-email").type(email);
-  cy.get("#input-password").type(password);
-  cy.get('form button[status="primary"]').click();
+//викликати кастомну команду в тесті: cy.logins("test@test.com", "12345", "Option 1")
+Cypress.Commands.add("loginCustom", (email, password, radioButton) => {
+  cy.get('input[data-cy="imputEmail1"]').type(email);
+  cy.get("#inputPassword2").type(password);
+  cy.get("nb-radio-group label").contains("Option 1").click();
+  cy.contains('[status="primary"]', "Sign in").click();
 });
 
 // ==== overwrite ====  type
