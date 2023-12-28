@@ -36,7 +36,7 @@
     "cy:smoke-tests": "npx cypress run -s 'cypress/e2e/smoke-tests/*'",
     "report:merge": "npx mochawesome-merge 'cypress/results/*.json' -o 'cypress/merged-report/mochawesome.json'",
     "report:html": "npx marge cypress/merged-report/mochawesome.json",
-    "report:delete": "rm cypress/results/* || true",
+    "report:delete": "rimraf cypress/results/* || true",
     "cy:run:report": "npm run report:delete && npm run cy:smoke-tests",
     "report:all": "npm run report:merge && npm run report:html",
     "cy:run:server": "start-test start http-get://localhost:4200/ cy:run:report"
@@ -115,7 +115,7 @@
     "mochawesome-report-generator": "^6.2.0",
     "npm-run-all": "4.0.2",
     "prettier": "^3.1.1",
-    "rimraf": "2.6.1",
+    "rimraf": "^2.6.1",
     "run-script-os": "^1.1.6",
     "start-server-and-test": "^2.0.3",
     "stylelint": "7.13.0",

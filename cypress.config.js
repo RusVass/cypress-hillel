@@ -1,6 +1,3 @@
-// import * as mysql from "mysql";
-// const mysql = require("mysql");
-
 const { defineConfig } = require("cypress");
 // import {defineConfig} from "cypress";
 // import * as mysql from "mysql";
@@ -28,7 +25,6 @@ module.exports = defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
-      // Usage: cy.task('queryDb', query)
       on("task", {
         queryDb: (query) => {
           return queryTestDb(query, config);
@@ -52,9 +48,9 @@ module.exports = defineConfig({
   responseTimeout: 30000, // default 30000
 
   // watchForFileChanges: false,
-  // env: {
-  //   POST: "4200",
-  //   WORK_ENV: "dev",
-  //   password: "qwerty",
-  // },
+  env: {
+    POST: "4200",
+    WORK_ENV: "dev",
+    password: "qwerty",
+  },
 });
