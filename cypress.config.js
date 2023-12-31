@@ -1,6 +1,6 @@
-import { defineConfig } from "cypress";
+const { defineConfig } = require("cypress");
 
-export default defineConfig({
+module.exports = defineConfig({
   projectId: "d3rmqz",
   reporter: "mochawesome",
   reporterOptions: {
@@ -24,7 +24,7 @@ export default defineConfig({
   defaultCommandTimeout: 5000, // default 4000
   requestTimeout: 10000, // default 5000
   responseTimeout: 30000, // default 30000
-
+  experimentalWebKitSupport: true,
   // watchForFileChanges: false,
   // env: {
   //   POST: '4200',
@@ -32,4 +32,3 @@ export default defineConfig({
   //   password: 'qwerty',
   // },
 });
-
