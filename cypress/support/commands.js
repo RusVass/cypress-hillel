@@ -1,42 +1,5 @@
 /// <reference types="cypress" />
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
 
-// ====== add ====  clickMenuByName
 Cypress.Commands.add("clickMenuByName", (name) => {
   cy.get("nb-sidebar nb-menu").contains(name).click();
 });
@@ -45,6 +8,16 @@ Cypress.Commands.add("clickMenuByName", (name) => {
 Cypress.Commands.add("forceClick", { prevSubject: "element" }, (subject) => {
   cy.wrap(subject).click({ force: true });
 });
+
+// батьківська команда
+Cypress.Commands.add("getPrimaryBtn", { prevSubject: "optional" }, (subject) => {
+  if(subject){
+    cy.wrap(subject).find("[status='primary']")
+  }else{
+    cy.get("[status='primary']")
+  }
+});
+
 
 // ===== add ====== login
 //викликати кастомну команду в тесті: cy.logins("test@test.com", "12345", "Option 1")
@@ -79,3 +52,7 @@ Cypress.Commands.add("loginViaAPI", (email, password) => {
   });
   cy.visit("https://guest:welcome2qauto@qauto.forstudy.space/");
 });
+
+
+
+

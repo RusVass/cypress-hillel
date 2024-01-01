@@ -96,10 +96,45 @@ describe("Assertions intro", () => {
     cy.contains("Popover").click()
   });
 
-  it("TASK / LOG!!!", () => {
+  it.skip("TASK / LOG!!!", () => {
     cy.contains("Modal & Overlays").click();//
     cy.task("log", "from console")
     cy.log("LOG!!!")
+  });
+
+  it.skip("custom", () => {
+    cy.clickMenuByName("Modal & Overlays");
+    cy.clickMenuByName("Popover");
+    cy.clickMenuByName("Layout");
+    cy.clickMenuByName("Forms");
+  });
+
+  it.skip("custom command forceClick()", () => {
+    cy.clickMenuByName("Modal & Overlays");
+    cy.clickMenuByName("Toastr");
+   cy.get("nb-checkbox input").eq(1).forceClick()
+  });
+
+  it.skip("customs command forceClick()", () => {
+    cy.clickMenuByName("Forms");
+    cy.clickMenuByName("Form Layouts");
+    cy.get("input[disabled]").forceClick();
+
+  });
+
+  it.skip("customs command getPrimaryBtn", () => {
+    cy.clickMenuByName("Forms");
+    cy.clickMenuByName("Form Layouts");
+    cy.getPrimaryBtn()
+    cy.contains("nb-card", "Using the Grid").getPrimaryBtn()
+  });
+// приховати пароль ******
+  it("First", () => {
+    cy.clickMenuByName("Forms");
+    cy.clickMenuByName("Form Layouts");
+    cy.get("#inputPassword2").type("password", {sensitive: true}).then(el=>{
+      cy.wrap(el).should("have.value", "password");
+    })
   });
 
 
