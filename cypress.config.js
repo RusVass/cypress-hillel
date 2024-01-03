@@ -17,6 +17,13 @@ module.exports = defineConfig({
           return null
         },
       })
+      //=====режим incognito======
+      on('before:browser:launch', (browser, launchOptions) => {
+            if(browser.name ==="chrome"){
+              launchOptions.args.push("--incognito")
+            }
+            return launchOptions
+          })
     },
     baseUrl: "http://localhost:4200",
     specPattern: "cypress/e2e/**/*.spec.{js,jsx,ts,tsx}",
@@ -30,6 +37,7 @@ module.exports = defineConfig({
   requestTimeout: 10000, // default 5000
   responseTimeout: 30000, // default 30000
   // watchForFileChanges: false,
+  experimentalWebKitSupport: true,
 
   env: {
     POST: "4200",

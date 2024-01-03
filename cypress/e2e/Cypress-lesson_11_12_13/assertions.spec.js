@@ -148,14 +148,7 @@ describe("Assertions intro", () => {
     cy.contains("Modal & Overlays").click();//
     cy.contains("Popover").click()
   });
-  it.skip("", () => {
-    cy.contains("Modal & Overlays").click();//
-    cy.contains("Popover").click()
-  });
-  it.skip("", () => {
-    cy.contains("Modal & Overlays").click();//
-    cy.contains("Popover").click()
-  });
+
 
 
 

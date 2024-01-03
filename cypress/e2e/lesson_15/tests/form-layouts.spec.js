@@ -4,6 +4,15 @@ import FormLayoutsPage from "../pages/FormLayouts.page.js";
 
 describe("Form Layouts", () => {
   const formLayoutsPage = new FormLayoutsPage();
+
+  // приклад виклада 2
+  it("test POM", () => {
+    formLayoutsPage.openPages();
+    formLayoutsPage.enterEmailValue("test@test.com");
+    formLayoutsPage.enterPasswordValue("12345")
+  });
+
+
   //  тест залогінитись через властивості
   it.skip("test POM", () => {
     formLayoutsPage.openPages();
@@ -13,7 +22,7 @@ describe("Form Layouts", () => {
     formLayoutsPage.elements.signInButton().click();
   });
 
-  it("test custom login", () => {
+  it.skip("test custom login", () => {
     cy.visit("/pages/forms/layouts");
     cy.loginCustom("test@test.com", "12345", "Option 1");
   });

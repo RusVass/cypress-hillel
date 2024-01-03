@@ -11,9 +11,18 @@ class FormLayoutsPage extends BasicPage {
     emailInput: () => cy.get(FormsPage.emailInput),
     passwordInput: () => cy.get("#inputPassword2"),
     radioButton: (radioButtonLabel) =>
-      cy.contains("nb-radio-group label", radioButtonLabel),
+    cy.contains("nb-radio-group label", radioButtonLabel),
     signInButton: () => cy.contains('div>button[status="primary"]', "Sign in"),
   };
+
+  // приклад виклада 2
+  enterEmailValue(value){
+    this.elements.emailInput().type(value)
+  }
+  enterPasswordValue(value) {
+    this.elements.passwordInput().type(value, {sensitiv: true})
+  }
+// =================================
 
   // виклик елементів через get:
   get emailInput() {
