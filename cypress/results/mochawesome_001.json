@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2023-12-08T22:51:44.084Z",
-    "end": "2023-12-08T22:51:44.350Z",
-    "duration": 266,
+    "start": "2024-01-06T20:03:47.280Z",
+    "end": "2024-01-06T20:03:47.551Z",
+    "duration": 271,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1e8b730e-c1a0-4dfd-8e11-ebc614e9c89f",
+      "uuid": "904e0b45-7b38-4dde-832a-1984a536fdb9",
       "title": "",
       "fullFile": "cypress/e2e/smoke-tests/test1.spec.js",
       "file": "cypress/e2e/smoke-tests/test1.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b3a03488-d5f7-4de9-94c3-bf4bf4562976",
+          "uuid": "875f7c6d-d094-4007-817e-1d3206029102",
           "title": "test1",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "GET request ",
               "fullTitle": "test1 GET request ",
               "timedOut": null,
-              "duration": 80,
+              "duration": 73,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.request(\"GET\", baseUrl).then(response => {\n  expect(response.status).eq(200);\n  expect(response.body).lengthOf(100);\n});",
               "err": {},
-              "uuid": "fbf6f5eb-8b3b-45f9-a109-5a98ab9d15e0",
-              "parentUUID": "b3a03488-d5f7-4de9-94c3-bf4bf4562976",
+              "uuid": "91825eb6-26a6-4d2c-8ae6-0fe8aae1cfb3",
+              "parentUUID": "875f7c6d-d094-4007-817e-1d3206029102",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "POST request ",
               "fullTitle": "test1 POST request ",
               "timedOut": null,
-              "duration": 161,
+              "duration": 171,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.request(\"POST\", baseUrl, {\n  fixture: \"user\"\n}).then(response => {\n  expect(response.status).eq(201);\n  expect(response.statusText).eq(\"Created\");\n});",
               "err": {},
-              "uuid": "da2590b7-272f-48fd-8a95-57ae1af1b63a",
-              "parentUUID": "b3a03488-d5f7-4de9-94c3-bf4bf4562976",
+              "uuid": "2bb15e92-1617-401c-a867-9eff78bdb0dd",
+              "parentUUID": "875f7c6d-d094-4007-817e-1d3206029102",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "fbf6f5eb-8b3b-45f9-a109-5a98ab9d15e0",
-            "da2590b7-272f-48fd-8a95-57ae1af1b63a"
+            "91825eb6-26a6-4d2c-8ae6-0fe8aae1cfb3",
+            "2bb15e92-1617-401c-a867-9eff78bdb0dd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 241,
+          "duration": 244,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
