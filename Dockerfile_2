@@ -1,0 +1,27 @@
+FROM node:16
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install --force
+
+EXPOSE 4200
+
+CMD ["npm", "run", "start"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
