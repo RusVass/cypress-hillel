@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-09T19:31:20.988Z",
+    "end": "2024-02-09T19:31:22.505Z",
+    "duration": 1517,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "64bd741d-0de7-470a-93cf-c458a49d23cd",
+      "title": "",
+      "fullFile": "cypress/e2e/smoke-tests/api.spec.js",
+      "file": "cypress/e2e/smoke-tests/api.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+          "title": "API request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET request ",
+              "fullTitle": "API request GET request ",
+              "timedOut": null,
+              "duration": 211,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", baseUrl).then(response => {\n  expect(response.status).eq(200);\n  expect(response.body).lengthOf(100);\n});",
+              "err": {},
+              "uuid": "ef8ab923-a778-4856-8f30-4faad7206200",
+              "parentUUID": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST request ",
+              "fullTitle": "API request POST request ",
+              "timedOut": null,
+              "duration": 391,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", baseUrl, {\n  fixture: \"user\"\n}).then(response => {\n  expect(response.status).eq(201);\n  expect(response.statusText).eq(\"Created\");\n});",
+              "err": {},
+              "uuid": "9c532814-eb22-4c45-8755-a9afc115f236",
+              "parentUUID": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT request test ",
+              "fullTitle": "API request PUT request test ",
+              "timedOut": null,
+              "duration": 426,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"PUT\", baseUrl + userId, {\n  fixture: \"user\"\n}).its(\"status\").should(\"eq\", 200);",
+              "err": {},
+              "uuid": "81544a1b-4712-4291-b7cf-89cc2eef2282",
+              "parentUUID": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PATCH request ",
+              "fullTitle": "API request PATCH request ",
+              "timedOut": null,
+              "duration": 199,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"PATCH\", baseUrl + userId, {\n  \"title\": \"Hillel\"\n}).then(response => {\n  expect(response.status).eq(200);\n  expect(response.body).to.have.property('title', 'Hillel');\n});",
+              "err": {},
+              "uuid": "ab31107a-50bb-40e0-87d7-9510a03f85cd",
+              "parentUUID": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE request ",
+              "fullTitle": "API request DELETE request ",
+              "timedOut": null,
+              "duration": 164,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"DELETE\", baseUrl + userId).then(response => {\n  expect(response.status).eq(200);\n  expect(response.duration).lessThan(200);\n});",
+              "err": {},
+              "uuid": "92e4120a-ae84-4ac8-8657-7e88dffba058",
+              "parentUUID": "83b5ce8f-599c-4617-a9bf-4ea985de82d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ef8ab923-a778-4856-8f30-4faad7206200",
+            "9c532814-eb22-4c45-8755-a9afc115f236",
+            "81544a1b-4712-4291-b7cf-89cc2eef2282",
+            "ab31107a-50bb-40e0-87d7-9510a03f85cd",
+            "92e4120a-ae84-4ac8-8657-7e88dffba058"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
