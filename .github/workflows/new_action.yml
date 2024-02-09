@@ -5,7 +5,7 @@ on: # як запускаємо
   workflow_dispatch: # вручну
   push: # тригер при push
     branches:
-      - master # слікує за master
+      - master # слідкує за master
     paths-ignore:
       - ".github/workflows/*" # те що ігноримо
   pull_request: # тригер при  pull_request
@@ -33,9 +33,9 @@ jobs:
         with:
           name: test-report
           path: mochawesome-report/
-  reports:
-    needs: cypress
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get project code
-        run: echo "test"
+#  reports:
+#    needs: cypress
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Get project code
+#        run: echo "test"
