@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-09T20:11:10.417Z",
+    "end": "2024-02-09T20:11:17.405Z",
+    "duration": 6988,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b36e1ce9-742e-4d29-b055-b49fe913544e",
+      "title": "",
+      "fullFile": "cypress/e2e/pageObjectTests/loginPageTest.Test.spec.js",
+      "file": "cypress/e2e/pageObjectTests/loginPageTest.Test.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7202cb70-699f-458a-be2d-61d4d24dc021",
+          "title": "Login test with PageObject",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Negative test",
+              "fullTitle": "Login test with PageObject Negative test",
+              "timedOut": null,
+              "duration": 1816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.emailInput.click().type('asd');\nloginPage.passwordInput.click().type('123');\nloginPage.emailError.should(\"contain\", \"Email should be the real one!\");\nloginPage.customCheckbox.click();\nloginPage.passwordError.should(\"contain\", \"Password should contain from 4 to 50 characters\");\nloginPage.loginButton.should('be.disabled');",
+              "err": {},
+              "uuid": "50c61fc5-39b5-40a3-858d-b11e24b91b5e",
+              "parentUUID": "7202cb70-699f-458a-be2d-61d4d24dc021",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Positive test",
+              "fullTitle": "Login test with PageObject Positive test",
+              "timedOut": null,
+              "duration": 5049,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.emailInput.click().type('test@i.ua');\nloginPage.passwordInput.click().type('pass');\nloginPage.customCheckbox.click();\nloginPage.loginButton.click();\nheaderPage.iconUI.should(\"be.visible\");",
+              "err": {},
+              "uuid": "22184e9a-5bb0-4052-91b1-f7fda5929453",
+              "parentUUID": "7202cb70-699f-458a-be2d-61d4d24dc021",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "50c61fc5-39b5-40a3-858d-b11e24b91b5e",
+            "22184e9a-5bb0-4052-91b1-f7fda5929453"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6865,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

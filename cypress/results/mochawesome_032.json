@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-09T20:14:19.134Z",
+    "end": "2024-02-09T20:14:23.583Z",
+    "duration": 4449,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aa7eb15c-2d2a-444a-8f34-524aafb34d63",
+      "title": "",
+      "fullFile": "cypress/e2e/hw-7-CypressFirstUITest/headerNav/header.spec.js",
+      "file": "cypress/e2e/hw-7-CypressFirstUITest/headerNav/header.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+          "title": "Header tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Change to light color ",
+              "fullTitle": "Header tests Change to light color ",
+              "timedOut": null,
+              "duration": 1619,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"button.select-button\").invoke(\"text\").then(tub => {\n  const tubText = tub.trim();\n  cy.wrap(tubText).should(\"eq\", \"Light\");\n});\ncy.get(\"nb-layout-header nav\").should(\"have.css\", \"background-color\", colors.Light);",
+              "err": {},
+              "uuid": "eb0b2cab-fa66-4229-9237-69dd58f1441b",
+              "parentUUID": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Change to dark color",
+              "fullTitle": "Header tests Change to dark color",
+              "timedOut": null,
+              "duration": 750,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"button.select-button\").click();\ncy.get(\"nb-option[ng-reflect-value='dark']\").invoke(\"text\").then(tub => {\n  const tubText = tub.trim();\n  cy.wrap(tubText).should(\"eq\", \"Dark\");\n});\ncy.get(\"nb-option[ng-reflect-value='dark']\").click();\ncy.get(\"nb-layout-header nav\").should(\"have.css\", \"background-color\", colors.Dark);",
+              "err": {},
+              "uuid": "d71b23fc-0d96-4771-a5c2-c398d655177b",
+              "parentUUID": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Change to cosmic color",
+              "fullTitle": "Header tests Change to cosmic color",
+              "timedOut": null,
+              "duration": 674,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"button.select-button\").click();\ncy.get(\"nb-option[ng-reflect-value='cosmic']\").invoke(\"text\").then(tub => {\n  const tubText = tub.trim();\n  cy.wrap(tubText).should(\"eq\", \"Cosmic\");\n});\ncy.get(\"nb-option[ng-reflect-value='cosmic']\").click();\ncy.get(\"nb-layout-header nav\").should(\"have.css\", \"background-color\", colors.Cosmic);",
+              "err": {},
+              "uuid": "496732f5-fdaf-4b8e-ac92-62085536b186",
+              "parentUUID": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Change to corporate  color",
+              "fullTitle": "Header tests Change to corporate  color",
+              "timedOut": null,
+              "duration": 664,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"button.select-button\").click();\ncy.get(\"nb-option[ng-reflect-value='corporate']\").invoke(\"text\").then(tub => {\n  const tubText = tub.trim();\n  cy.wrap(tubText).should(\"eq\", \"Corporate\");\n});\ncy.get(\"nb-option[ng-reflect-value='corporate']\").click();\ncy.get(\"nb-layout-header nav\").should(\"have.css\", \"background-color\", colors.Corporate);",
+              "err": {},
+              "uuid": "da27d190-2bef-494b-8340-5acb4fac272e",
+              "parentUUID": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Return Light color",
+              "fullTitle": "Header tests Return Light color",
+              "timedOut": null,
+              "duration": 599,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"button.select-button\").click();\ncy.get(\"nb-option[ng-reflect-value='default']\").invoke(\"text\").then(tub => {\n  const tubText = tub.trim();\n  cy.wrap(tubText).should(\"eq\", \"Light\");\n});\ncy.get(\"nb-option[ng-reflect-value='default']\").click();\ncy.get(\"nb-layout-header nav\").should(\"have.css\", \"background-color\", colors.Light);",
+              "err": {},
+              "uuid": "5ac31e14-59a8-4086-acfb-d492c0c95b42",
+              "parentUUID": "aa2c1a52-1edb-43ab-94d1-f91caa1df86e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eb0b2cab-fa66-4229-9237-69dd58f1441b",
+            "d71b23fc-0d96-4771-a5c2-c398d655177b",
+            "496732f5-fdaf-4b8e-ac92-62085536b186",
+            "da27d190-2bef-494b-8340-5acb4fac272e",
+            "5ac31e14-59a8-4086-acfb-d492c0c95b42"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4306,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
